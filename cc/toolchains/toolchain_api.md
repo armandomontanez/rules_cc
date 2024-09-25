@@ -12,9 +12,11 @@ cc_args_list(<a href="#cc_args_list-name">name</a>, <a href="#cc_args_list-args"
 
 An ordered list of cc_args.
 
-This is a convenience rule to allow you to group a set of multiple [cc_args](#cc_args) into a
+This is a convenience rule to allow you to group a set of multiple [`cc_args`](#cc_args) into a
 single list. This particularly useful for toolchain behaviors that require different flags for
 different actions.
+
+[cc_args](#cc_args)
 
 Note: The order of the arguments in `args` is preserved to support order-sensitive flags.
 

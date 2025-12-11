@@ -1,12 +1,13 @@
 load("//cc/toolchains:args.bzl", "cc_args")
 load("//cc/toolchains:feature.bzl", "cc_feature")
 
-package(default_visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:private"])
 
 cc_feature(
     name = "feature",
     args = [":generate_linkmap"],
     feature_name = "generate_linkmap",
+    visibility = ["//visibility:public"],
 )
 
 cc_args(

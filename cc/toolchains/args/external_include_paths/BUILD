@@ -1,6 +1,8 @@
 load("//cc/toolchains:args.bzl", "cc_args")
 load("//cc/toolchains:nested_args.bzl", "cc_nested_args")
 
+package(default_visibility = ["//visibility:private"])
+
 cc_args(
     name = "external_include_paths",
     actions = ["//cc/toolchains/actions:compile_actions"],

@@ -2,6 +2,8 @@ load("//cc/toolchains:args.bzl", "cc_args")
 load("//cc/toolchains:feature.bzl", "cc_feature")
 load("//cc/toolchains:feature_set.bzl", "cc_feature_set")
 
+package(default_visibility = ["//visibility:private"])
+
 cc_feature_set(
     name = "feature",
     all_of = [

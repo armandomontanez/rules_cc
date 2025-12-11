@@ -2,6 +2,8 @@ load("@rules_cc//cc/toolchains:actions.bzl", "cc_action_type_set")
 load("@rules_cc//cc/toolchains:args.bzl", "cc_args")
 load("@rules_cc//cc/toolchains:feature.bzl", "cc_feature")
 
+package(default_visibility = ["//visibility:private"])
+
 cc_action_type_set(
     name = "lto_index_actions",
     actions = [

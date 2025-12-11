@@ -1,8 +1,6 @@
 load("//cc/toolchains:feature.bzl", "cc_feature")
 load("//cc/toolchains:feature_set.bzl", "cc_feature_set")
 
-package(default_visibility = ["//visibility:public"])
-
 # All of these arguments originate from the legacy features defined in Bazel's Java code:
 #     https://github.com/bazelbuild/bazel/blob/master/src/main/java/com/google/devtools/build/lib/rules/cpp/CppActionConfigs.java
 
@@ -39,6 +37,7 @@ cc_feature_set(
         "//cc/toolchains/args/dependency_file:feature",
         "//cc/toolchains/args/compile_flags:feature",  # NOTE: This should come below default flags so user flags can override them
     ],
+    visibility = ["//visibility:public"],
 )
 
 cc_feature(
@@ -49,5 +48,4 @@ cc_feature(
         "//cc/toolchains/features/legacy:build_interface_libraries",
         "//cc/toolchains/features/legacy:dynamic_library_linker_tool",
     ],
-    visibility = ["//visibility:private"],
 )

@@ -2,6 +2,8 @@ load("//cc/toolchains:args.bzl", "cc_args")
 load("//cc/toolchains:feature.bzl", "cc_feature")
 load("//cc/toolchains:feature_constraint.bzl", "cc_feature_constraint")
 
+package(default_visibility = ["//visibility:private"])
+
 cc_feature_constraint(
     name = "static_link_cpp_runtimes_enabled",
     all_of = ["//cc/toolchains/features:static_link_cpp_runtimes"],

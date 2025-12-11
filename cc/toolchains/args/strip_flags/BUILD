@@ -2,7 +2,7 @@ load("//cc/toolchains:args.bzl", "cc_args")
 load("//cc/toolchains:args_list.bzl", "cc_args_list")
 load("//cc/toolchains:feature.bzl", "cc_feature")
 
-package(default_visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:private"])
 
 cc_feature(
     name = "feature",
@@ -10,6 +10,7 @@ cc_feature(
     # This does not override a feature since these arguments are directly bound
     # to the strip action in CppActionConfigs.java.
     feature_name = "strip_flags_feature",
+    visibility = ["//visibility:public"],
 )
 
 cc_args_list(

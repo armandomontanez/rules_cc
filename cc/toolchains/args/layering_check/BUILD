@@ -18,11 +18,12 @@
 load("//cc/toolchains:args.bzl", "cc_args")
 load("//cc/toolchains:feature.bzl", "cc_feature")
 
-package(default_visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:private"])
 
 cc_feature(
     name = "module_maps",
     feature_name = "module_maps",
+    visibility = ["//visibility:public"],
 )
 
 cc_feature(
@@ -32,6 +33,7 @@ cc_feature(
     ],
     feature_name = "use_module_maps",
     requires_any_of = [":module_maps"],
+    visibility = ["//visibility:public"],
 )
 
 cc_feature(
@@ -43,6 +45,7 @@ cc_feature(
     ],
     feature_name = "layering_check",
     implies = [":use_module_maps"],
+    visibility = ["//visibility:public"],
 )
 
 cc_args(

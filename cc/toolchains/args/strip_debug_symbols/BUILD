@@ -1,12 +1,13 @@
 load("//cc/toolchains:args.bzl", "cc_args")
 load("//cc/toolchains:feature.bzl", "cc_feature")
 
-package(default_visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:private"])
 
 cc_feature(
     name = "feature",
     args = [":strip_debug_symbols"],
     overrides = "//cc/toolchains/features/legacy:strip_debug_symbols",
+    visibility = ["//visibility:public"],
 )
 
 cc_args(
@@ -14,4 +15,5 @@ cc_args(
     actions = ["//cc/toolchains/actions:link_actions"],
     args = ["-Wl,-S"],
     requires_not_none = "//cc/toolchains/variables:strip_debug_symbols",
+    visibility = ["//visibility:public"],
 )
